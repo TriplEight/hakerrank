@@ -27,7 +27,7 @@ class Solution:
             queue = [root]
             while queue:
                 node = queue.pop()
-                print(node.data)
+                print(node.data, end = ' ')
                 if node.left:
                     queue.insert(0, node.left)
                 if node.right:
