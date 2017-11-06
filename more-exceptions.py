@@ -1,19 +1,10 @@
 # Write your code here
-from math import pow
-
-
 class Calculator(object):
-    # def __init__(self, n, p):
-    #    self.n = n
-    #    self.p = p
-
     def power(self, n, p):
-        if n >= 0 and p >= 0:
-            result = pow(n, p)
-            return result
+        if n < 0 or p < 0:
+            raise ValueError("n and p should be non-negative") 
         else:
-            raise ValueError("n and p should be non-negative")
-
+            return n ** p
 
 myCalculator = Calculator()
 T = int(input())
