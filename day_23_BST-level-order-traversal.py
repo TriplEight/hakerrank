@@ -21,8 +21,8 @@ class Solution:
         return root
 
 # ===================================================
-    def levelOrder(self, root):
-        # Write your code here
+    def level_order_traverse(self, root):
+        #Write your code here
         if root:
             queue = [root]
             while queue:
