@@ -1,0 +1,23 @@
+from random import randint,choice
+from bisect import bisect_right
+
+
+pattern=['YES','NO','YES','NO','YES']
+print(len(pattern))
+for expected in pattern:
+    n=randint(3,200)
+    
+    while True:# valid case
+        k=randint(1,n)
+        arr=[randint(-10**3,10**3) for _ in range(n)]
+        
+        if 0 not in arr:# requirements
+           arr[arr.index(choice(arr))]=0
+           
+        if min(arr)>=0 or max(arr)<=0:continue
+        actual='NO' if bisect_right(sorted(arr),0)>=k else 'YES'
+        
+        if actual is expected:break
+        
+    print(n,k)
+    print(' '.join([str(i) for i in arr]))
